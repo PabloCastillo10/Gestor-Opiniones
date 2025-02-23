@@ -5,6 +5,10 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import {dbConnection} from './mongo.js';
 import userRoutes from '../src/users/user.routes.js'
+import categoriaRoutes from '../src/categorias/categoria.routes.js'
+import { createAdmin } from '../src/users/user.controller.js';
+import { defaultCategoria } from '../src/categorias/categoria.controller.js';
+
 const configurarMiddlewares = (app) => {
     app.use(express.urlencoded({extended: false}));
     app.use(cors());
@@ -12,13 +16,19 @@ const configurarMiddlewares = (app) => {
     app.use(helmet());
     app.use(morgan('dev'));
 }
+
+
 const routes = (app) => {
     app.use('/gestorOpinion/users', userRoutes);
+    app.use('/gestorOpinion/categorias', categoriaRoutes);
+
 }
  const conectarDB = async  () => {
     try{
         await dbConnection();
         console.log("Conexión a la base de datos exitosa");
+        await createAdmin();
+        await defaultCategoria();
     }catch(error){
         console.error('Error conectando a la base de datos', error);
         process.exit(1);

@@ -1,4 +1,5 @@
 import userModel from '../users/user.model.js';
+import categoriaModel from '../categorias/categoria.model.js';
 
 
 export const existenteEmailUser = async (email = ' ') => {
@@ -19,6 +20,24 @@ export const existeUserById = async (id = '') => {
     const existeUser = await userModel.findById(id);
 
     if (!existeUser) {
+        throw new Error(`El ID ${ id } no existe en la base de datos`);
+    }
+}
+
+export const existenteNameCategoria = async (name = ' ') => {
+
+    const existeName = await Categorie.findOne({ name });
+
+    if (existeName) {
+        throw new Error(`El nombre ${ name } ya existe en la base de datos`);
+    }
+}
+
+export const existeCategoriaById = async (id = '') => {
+
+    const existeCategoria = await categoriaModel.findById(id);
+
+    if (!existeCategoria) {
         throw new Error(`El ID ${ id } no existe en la base de datos`);
     }
 }

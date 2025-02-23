@@ -34,7 +34,8 @@ const userSchema = Schema(
         },
         role: {
             type: String,
-            default: "STUDENT_ROLE"
+            enum: ["ADMIN_ROLE", "USER_ROLE"],
+            default: "USER_ROLE"
         },
         estado: {
             type: Boolean,

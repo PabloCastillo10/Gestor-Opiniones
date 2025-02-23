@@ -1,4 +1,5 @@
 import userModel from "./user.model.js";
+import categoriaModel from "../categorias/categoria.model.js";
 import {hash, verify} from 'argon2'
 import {generarJWT} from "../helpers/generate-jwt.js"
 import {response, request} from 'express'
@@ -93,39 +94,45 @@ export const register = async (req, res) => {
 
 export const updateProfile = async (req, res) => {
     try {
-        const userId = req.user.id; // ID del usuario autenticado
+        const userId = req.user.id; 
         const { name, surname, username, phone, oldPassword, newPassword } = req.body;
 
-        // Buscar usuario en la base de datos
+      
         const user = await userModel.findById(userId);
         if (!user) {
             return res.status(404).json({ msg: "User not found" });
         }
 
-        // Verificar si el nuevo username ya está en uso
+        
         if (username && username !== user.username) {
             const existingUser = await userModel.findOne({ username });
             if (existingUser) {
                 return res.status(400).json({ msg: "Username already in use" });
             }
         }
+        if (req.user.id !== id && req.user.role !== "ADMIN_ROLE") {
+            return res.status(400).json({
+                success: false,
+                msg: 'No tiene permiso para actualizar un perfil que no es suyo'
+            })
+        }
 
-        // Validar cambio de contraseña
+     
         if (newPassword) {
             if (!oldPassword) {
                 return res.status(400).json({ msg: "Old password is required to change the password" });
             }
 
-            const isMatch = await verify(user.password, oldPassword); // Cambiar compare por verify
+            const isMatch = await verify(user.password, oldPassword); 
             if (!isMatch) {
                 return res.status(400).json({ msg: "Old password is incorrect" });
             }
 
-            // Encriptar nueva contraseña
+         
             user.password = await hash(newPassword);
         }
 
-        // Actualizar datos (excepto el email)
+     
         user.name = name || user.name;
         user.surname = surname || user.surname;
         user.username = username || user.username;
@@ -149,4 +156,32 @@ export const updateProfile = async (req, res) => {
     }
 };
 
+export const createAdmin = async () => {
+    try {
 
+        const verifyUser = await userModel.findOne({ username: "Admin".toLowerCase() })
+
+        if (!verifyUser) {
+            const encryptedPassword = await hash("Admin100");
+            const adminUser = new userModel({
+                name: "Pablo",
+                surname: "Castillo",
+                username: "Admin".toLowerCase(),
+                email: "pablocastillo@gmail.com",
+                phone: "12345678",
+                password: encryptedPassword,
+                role: "ADMIN_ROLE"
+            });
+    
+            await adminUser.save();
+    
+            console.log("Usuario ADMIN creado con éxito");
+        } else {
+            console.log("Usuario ADMIN ya existe, no se volvio a crear");
+        }
+
+    
+    } catch (error) {
+        console.error("Error al crear el usuario ADMIN: ", error);
+    }
+}

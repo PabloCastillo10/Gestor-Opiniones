@@ -19,7 +19,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"daniel\",\r\n    \"age\": 18,\r\n    \"username\" : \"dramirez\",\r\n    \"surname\": \"ramirez\",\r\n    \"email\": \"dramirez@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\" : \"12345678\"\r\n}",
+							"raw": "{\r\n    \"name\": \"kevin\",\r\n    \"age\": 18,\r\n    \"username\" : \"kgutierrez\",\r\n    \"surname\": \"gutierrez\",\r\n    \"email\": \"kgutierrez@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\" : \"12345678\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -98,7 +98,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\" : \"dramirez@gmail.com\",\r\n    \"password\" : \"87654321\"\r\n\r\n}",
+							"raw": "{\r\n    \"email\" : \"pablocastillo@gmail.com\",\r\n    \"password\" : \"Admin100\",\r\n    \"role\" : \"ADMIN_ROLE\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -116,6 +116,143 @@
 								"gestorOpinion",
 								"users",
 								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categorias",
+			"item": [
+				{
+					"name": "Agregar Categoria",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhY2VjNWJiYzgyMGM2ZjA4Y2Q2ZGIiLCJpYXQiOjE3NDAyOTY4NjQsImV4cCI6MTc0MDMwMDQ2NH0.VHopvTq4he_vm1LiiyiKLVhS26gRoDgPop4e20t-Rt4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"xd\",\r\n    \"description\" : \"xd categoria\",\r\n    \"role\" : \"ADMIN_ROLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinion/categorias/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinion",
+								"categorias",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Categoria",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinion/categorias/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinion",
+								"categorias",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Categoria",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhY2VjNWJiYzgyMGM2ZjA4Y2Q2ZGIiLCJpYXQiOjE3NDAyOTY4NjQsImV4cCI6MTc0MDMwMDQ2NH0.VHopvTq4he_vm1LiiyiKLVhS26gRoDgPop4e20t-Rt4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"dj salsa\",\r\n    \"description\" : \"categoria dj salsa\",\r\n    \"role\" : \"ADMIN_ROLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinion/categorias/67bad8ceb1924666fe2036a2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinion",
+								"categorias",
+								"67bad8ceb1924666fe2036a2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Categoria",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhY2VjNWJiYzgyMGM2ZjA4Y2Q2ZGIiLCJpYXQiOjE3NDAyOTg5NjgsImV4cCI6MTc0MDMwMjU2OH0.tJ7B-ui9TvOVab-xy_Zfm2sjx2_XRUY-4JCJ65SoC8M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinion/categorias/67bad8ceb1924666fe2036a2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinion",
+								"categorias",
+								"67bad8ceb1924666fe2036a2"
 							]
 						}
 					},

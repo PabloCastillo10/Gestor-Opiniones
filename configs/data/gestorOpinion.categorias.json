@@ -1,0 +1,84 @@
+[{
+  "_id": {
+    "$oid": "67bac7280baa4ea0fd9851b6"
+  },
+  "name": "nba",
+  "description": "Categoria nba",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-23T06:58:48.297Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-23T06:58:48.297Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67bac77c0baa4ea0fd9851b8"
+  },
+  "name": "dj lloros",
+  "description": "categoria dj lloros",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-23T07:00:12.004Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-23T08:12:25.704Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67bacecb324b8e1b72b10954"
+  },
+  "name": "dj lilis",
+  "description": "categoria dj lilis",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-23T07:31:23.748Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-23T08:12:50.514Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67bad592068afdfd8362d3a5"
+  },
+  "name": "dj muertos",
+  "description": "categoria dj muertos",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-23T08:00:18.594Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-23T08:06:46.262Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67bad5df28421232d19cfb1f"
+  },
+  "name": "dj enfados",
+  "description": "categoria dj enfados",
+  "estado": false,
+  "createdAt": {
+    "$date": "2025-02-23T08:01:35.591Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-23T08:23:02.196Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67bad8ceb1924666fe2036a2"
+  },
+  "name": "defecto",
+  "description": "Categoría creada desde el inicio del sistema no se puede eliminar ni editar",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-23T08:14:06.019Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-23T08:14:06.019Z"
+  }
+}]
