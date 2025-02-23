@@ -1,0 +1,38 @@
+[{
+  "_id": {
+    "$oid": "67ba8e2cae31e8e626ff62ef"
+  },
+  "name": "pablo",
+  "surname": "castillo",
+  "username": "pcastillo",
+  "email": "pcastillo@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$dpIlOWN6De/zS+Zn8/hENg$KUHRJA7NRxOz1BmvewADgY1faJ+2xYbnEaepN5PxLAc",
+  "phone": "12345678",
+  "role": "STUDENT_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-23T02:55:40.803Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-23T02:55:40.803Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ba90c45f8ac6f0ddda2cc1"
+  },
+  "name": "Carlos",
+  "surname": "Ramírez",
+  "username": "carlitos",
+  "email": "dramirez@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$Eeih4Gg/JKrC535y6LdH/A$KI1HeqlhlfEaUULSehpauwcgePWBrSnMVjlAJcuvoa4",
+  "phone": "12345678",
+  "role": "STUDENT_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-23T03:06:44.556Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-23T03:51:41.066Z"
+  }
+}]

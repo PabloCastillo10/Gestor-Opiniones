@@ -1,19 +1,24 @@
-import User from '../user/user.model.js';
+import userModel from '../users/user.model.js';
 
 
-export const existenteEmailUser = async (email = '') => {
-    const existeEmail = await User.findOne({ email });
+export const existenteEmailUser = async (email = ' ') => {
+
+    const existeEmail = await userModel.findOne({ email });
 
     if (existeEmail) {
-        throw new Error(`El email ${email} ya esta registrado`);
+        throw new Error(`El email ${ email } ya existe en la base de datos`);
     }
 }
 
 
+
+
+
 export const existeUserById = async (id = '') => {
-    const existeUser = await User.findById(id);
     
+    const existeUser = await userModel.findById(id);
+
     if (!existeUser) {
-        throw new Error(`El ID ${id} no existe en la base de datos`);
+        throw new Error(`El ID ${ id } no existe en la base de datos`);
     }
 }

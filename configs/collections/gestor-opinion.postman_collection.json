@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "9ec82f5f-a6fa-4a28-b3e9-ca1de1440a6b",
+		"name": "gestor-opinion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41636862"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register con User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"daniel\",\r\n    \"age\": 18,\r\n    \"username\" : \"dramirez\",\r\n    \"surname\": \"ramirez\",\r\n    \"email\": \"dramirez@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\" : \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinion/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinion",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Contraseña y Datos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhOTBjNDVmOGFjNmYwZGRkYTJjYzEiLCJpYXQiOjE3NDAyODIxNzEsImV4cCI6MTc0MDI4NTc3MX0.GoSbIsTdFB_R6ovdXhT3mR6-2V2wS6yRad30jK1KTT0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhOTBjNDVmOGFjNmYwZGRkYTJjYzEiLCJpYXQiOjE3NDAyODI0NjYsImV4cCI6MTc0MDI4NjA2Nn0.MJuIjljjRk998scBPDxDOYAeeAZm-2B6iqeWICwKGz4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Carlos\",\r\n    \"surname\": \"Ramírez\",\r\n    \"username\": \"carlitos\",\r\n    \"phone\": \"12345678\",\r\n    \"oldPassword\": \"12345678\",\r\n    \"newPassword\": \"87654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinion/users/67ba90c45f8ac6f0ddda2cc1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinion",
+								"users",
+								"67ba90c45f8ac6f0ddda2cc1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login con User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"dramirez@gmail.com\",\r\n    \"password\" : \"87654321\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinion/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinion",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
