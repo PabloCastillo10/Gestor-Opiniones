@@ -19,7 +19,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"kevin\",\r\n    \"age\": 18,\r\n    \"username\" : \"kgutierrez\",\r\n    \"surname\": \"gutierrez\",\r\n    \"email\": \"kgutierrez@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\" : \"12345678\"\r\n}",
+							"raw": "{\r\n    \"name\": \"lebron\",\r\n    \"age\": 18,\r\n    \"username\" : \"ljames\",\r\n    \"surname\": \"james\",\r\n    \"email\": \"ljames@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\" : \"12345678\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -98,7 +98,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\" : \"pablocastillo@gmail.com\",\r\n    \"password\" : \"Admin100\",\r\n    \"role\" : \"ADMIN_ROLE\"\r\n\r\n}",
+							"raw": "{\r\n    \"email\" : \"ljames@gmail.com\",\r\n    \"password\" : \"12345678\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -253,6 +253,168 @@
 								"gestorOpinion",
 								"categorias",
 								"67bad8ceb1924666fe2036a2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Publicaciones",
+			"item": [
+				{
+					"name": "Agregar Publicacion",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\" : \"Lebron James\",\r\n    \"name\" : \"dj lloros\",\r\n    \"email\" : \"ljames@gmail.com\",\r\n    \"textoPrincipal\" : \"Lebron James el jugador mas completo de la nba\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinion/publicaciones/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinion",
+								"publicaciones",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Publicacion",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinion/publicaciones/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinion",
+								"publicaciones",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activar Publicacion",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhYzU0OTQ4MTc4NWQyYjY5OTZhOGYiLCJpYXQiOjE3NDAzNTg3NjAsImV4cCI6MTc0MDM2MjM2MH0.8fql1pN66D9cwOr9cwfUHq3FP4BsyB7C7XOB-eNTKLQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinion/publicaciones/activate/67bb827593d6074d5b114561",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinion",
+								"publicaciones",
+								"activate",
+								"67bb827593d6074d5b114561"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Desactivar Publicacion",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JiN2Y2YjU1OTU4ZmY5Y2M0MjM1NjAiLCJpYXQiOjE3NDAzNjQyMDAsImV4cCI6MTc0MDM2NzgwMH0.bSJXRo4uVMo_acpYAhhIHw7No6oYjoycqfmziHf53PM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinion/publicaciones/67bb827593d6074d5b114561",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinion",
+								"publicaciones",
+								"67bb827593d6074d5b114561"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Publicacion",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhYzU0OTQ4MTc4NWQyYjY5OTZhOGYiLCJpYXQiOjE3NDAzNTg3NjAsImV4cCI6MTc0MDM2MjM2MH0.8fql1pN66D9cwOr9cwfUHq3FP4BsyB7C7XOB-eNTKLQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"Michael Jordan\",\r\n    \"name\": \"dj muertos\",\r\n    \"email\": \"dramirez@gmail.com\",\r\n    \"textoPrincipal\": \"el goat\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinion/publicaciones/67bb7d1855958ff9cc423557",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinion",
+								"publicaciones",
+								"67bb7d1855958ff9cc423557"
 							]
 						}
 					},

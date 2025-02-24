@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "67bb7d1855958ff9cc423557"
+  },
+  "titulo": "Michael Jordan",
+  "categoria": {
+    "$oid": "67bad592068afdfd8362d3a5"
+  },
+  "user": {
+    "$oid": "67bb7f2a55958ff9cc42355a"
+  },
+  "textoPrincipal": "el goat",
+  "createdAt": {
+    "$date": "2025-02-23T19:55:04.652Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-24T01:09:31.065Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67bb827593d6074d5b114561"
+  },
+  "titulo": "Lebron James",
+  "categoria": {
+    "$oid": "67bac77c0baa4ea0fd9851b8"
+  },
+  "user": {
+    "$oid": "67bb7f6b55958ff9cc423560"
+  },
+  "textoPrincipal": "Lebron James el jugador mas completo de la nba",
+  "createdAt": {
+    "$date": "2025-02-23T20:17:57.873Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-24T02:30:50.663Z"
+  },
+  "status": true
+}]

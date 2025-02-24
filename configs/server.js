@@ -6,6 +6,7 @@ import morgan from 'morgan';
 import {dbConnection} from './mongo.js';
 import userRoutes from '../src/users/user.routes.js'
 import categoriaRoutes from '../src/categorias/categoria.routes.js'
+import publicacionRoutes from '../src/public/public.routes.js'
 import { createAdmin } from '../src/users/user.controller.js';
 import { defaultCategoria } from '../src/categorias/categoria.controller.js';
 
@@ -21,7 +22,7 @@ const configurarMiddlewares = (app) => {
 const routes = (app) => {
     app.use('/gestorOpinion/users', userRoutes);
     app.use('/gestorOpinion/categorias', categoriaRoutes);
-
+    app.use('/gestorOpinion/publicaciones', publicacionRoutes);
 }
  const conectarDB = async  () => {
     try{
