@@ -33,7 +33,15 @@
     "$date": "2025-02-23T20:17:57.873Z"
   },
   "updatedAt": {
-    "$date": "2025-02-24T02:30:50.663Z"
+    "$date": "2025-02-24T03:41:25.755Z"
   },
-  "status": true
+  "status": true,
+  "comentarios": [
+    {
+      "$oid": "67bbe86d9fdb2bf7d4422bba"
+    },
+    {
+      "$oid": "67bbea65badfbf816e8fc17e"
+    }
+  ]
 }]

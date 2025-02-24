@@ -7,6 +7,7 @@ import {dbConnection} from './mongo.js';
 import userRoutes from '../src/users/user.routes.js'
 import categoriaRoutes from '../src/categorias/categoria.routes.js'
 import publicacionRoutes from '../src/public/public.routes.js'
+import comentarioRoutes from '../src/comentario/comentario.routes.js'
 import { createAdmin } from '../src/users/user.controller.js';
 import { defaultCategoria } from '../src/categorias/categoria.controller.js';
 
@@ -23,6 +24,7 @@ const routes = (app) => {
     app.use('/gestorOpinion/users', userRoutes);
     app.use('/gestorOpinion/categorias', categoriaRoutes);
     app.use('/gestorOpinion/publicaciones', publicacionRoutes);
+    app.use('/gestorOpinion/comentarios', comentarioRoutes);
 }
  const conectarDB = async  () => {
     try{

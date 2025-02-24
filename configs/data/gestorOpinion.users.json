@@ -1,43 +1,5 @@
 [{
   "_id": {
-    "$oid": "67ba8e2cae31e8e626ff62ef"
-  },
-  "name": "pablo",
-  "surname": "castillo",
-  "username": "pcastillo",
-  "email": "pcastillo@gmail.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$dpIlOWN6De/zS+Zn8/hENg$KUHRJA7NRxOz1BmvewADgY1faJ+2xYbnEaepN5PxLAc",
-  "phone": "12345678",
-  "role": "STUDENT_ROLE",
-  "estado": true,
-  "createdAt": {
-    "$date": "2025-02-23T02:55:40.803Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-23T02:55:40.803Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67ba90c45f8ac6f0ddda2cc1"
-  },
-  "name": "Carlos",
-  "surname": "Ramírez",
-  "username": "carlitos",
-  "email": "dramirez@gmail.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$Eeih4Gg/JKrC535y6LdH/A$KI1HeqlhlfEaUULSehpauwcgePWBrSnMVjlAJcuvoa4",
-  "phone": "12345678",
-  "role": "STUDENT_ROLE",
-  "estado": true,
-  "createdAt": {
-    "$date": "2025-02-23T03:06:44.556Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-23T03:51:41.066Z"
-  }
-},
-{
-  "_id": {
     "$oid": "67bac549481785d2b6996a8f"
   },
   "name": "kevin",
@@ -72,5 +34,62 @@
   },
   "updatedAt": {
     "$date": "2025-02-23T07:31:17.984Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67bb7f2a55958ff9cc42355a"
+  },
+  "name": "daniel",
+  "surname": "ramirez",
+  "username": "dramirez",
+  "email": "dramirez@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$TEOKDaoJ5XcBah17w0R80w$dcSy7IGgzjwJJFPmEru4dZ8FT7b7RRjHXYX1mNz0Ogo",
+  "phone": "12345678",
+  "role": "USER_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-23T20:03:54.131Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-23T20:03:54.131Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67bb7f4655958ff9cc42355d"
+  },
+  "name": "stephen",
+  "surname": "curry",
+  "username": "scurry",
+  "email": "scurry@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$3T/REYtxcmNdYD3y2O7lhg$9GrNiUa0FKG/UEGyKcn4D+UvCoI5ChclKbu6c6D3g+U",
+  "phone": "12345678",
+  "role": "USER_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-23T20:04:22.645Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-23T20:04:22.645Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67bb7f6b55958ff9cc423560"
+  },
+  "name": "lebron",
+  "surname": "james",
+  "username": "ljames",
+  "email": "ljames@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$/lU9nBqIegPK9yMlZ2FhSg$LltGUTnwatnmmNDo5lP791ZDQfhTthj1rVHEOZhcgO4",
+  "phone": "12345678",
+  "role": "USER_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-23T20:04:59.001Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-23T20:04:59.001Z"
   }
 }]

@@ -19,6 +19,12 @@ export const PublicSchema = Schema ({
                 type: String,
                 required: true
             },
+            comentarios: [
+                {
+                    type: Schema.Types.ObjectId,
+                    ref: 'Comentario',
+                }
+            ],
             status: {
                 type: Boolean,
                 default: true

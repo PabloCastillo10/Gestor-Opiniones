@@ -1,6 +1,7 @@
 import categoriaModel from "../categorias/categoria.model.js";
 import publicModel from "./public.model.js";
 import userModel from "../users/user.model.js";
+import comentarioModel from "../comentario/comentario.model.js";
 
 
 export const savePublicacion = async (req, res) => {
@@ -56,6 +57,11 @@ export const getPublicaciones = async (req, res) => {
         const publicaciones = await publicModel.find()
         .populate('categoria', 'name')
         .populate('user', 'email')
+        .populate({
+            path: 'comentarios',
+            match: { status: true }, 
+
+        });
         res.status(200).json({
             succes: true,
             msg: 'Publicaciones Obtenidas Correctamente',
@@ -74,7 +80,7 @@ export const getPublicaciones = async (req, res) => {
 export const updatePublicacion = async (req, res = response) => {
     try {
         const {id} = req.params;
-        const {_id, name, email, ...data} = req.body;
+        const {_id, name, ...data} = req.body;
 
         
         if (name) {
@@ -88,16 +94,7 @@ export const updatePublicacion = async (req, res = response) => {
             data.categoria = nuevaCategoria._id; 
         }
 
-        if (email) {
-            const nuevoUsuario = await userModel.findOne({ email });
-            if (!nuevoUsuario) {
-                return res.status(404).json({
-                    succes: false,
-                    msg: "Usuario no encontrado",
-                });
-            }
-            data.user = nuevoUsuario._id; 
-        }
+      
 
         
 

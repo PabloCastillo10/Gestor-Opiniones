@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "67bbea65badfbf816e8fc17e"
+  },
+  "publicacion": {
+    "$oid": "67bb827593d6074d5b114561"
+  },
+  "user": {
+    "$oid": "67bac549481785d2b6996a8f"
+  },
+  "texto": "Michael curry Jordan >> Scott Pipen Jr",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-24T03:41:25.735Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-24T04:21:33.769Z"
+  }
+}]
