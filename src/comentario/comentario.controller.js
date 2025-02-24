@@ -45,16 +45,39 @@ export const saveComentario = async (req, res) => {
 
 
 export const updateComentario = async (req, res) => {
-    const { comentarioId } = req.params;
-    const { texto } = req.body;
-
+    
     try {
+        const { comentarioId } = req.params;
+        const { texto } = req.body;
         const comentario = await comentarioModel.findById(comentarioId);
+
+        if (!req.user || !req.user.id) {
+            return res.status(401).json({
+                succes: false,
+                msg: "Usuario no autenticado",
+            });
+        }
+
 
         if (!comentario) {
             return res.status(404).json({ msg: "Comentario no encontrado" });
         }
 
+        
+        if (req.user.id.toString() !== comentario.user.toString()) {
+            return res.status(403).json({
+                succes: false,
+                msg: "No puedes editar porque no sos el usuario que creo este comentario",
+            });
+        }
+       
+        
+        if (req.user.id.toString() !== comentario.user.toString()) {
+            return res.status(403).json({
+                succes: false,
+                msg: "No puedes eliminar porque no sos el usuario que creo esta publicación",
+            });
+        }
         if (!comentario.status) {
             return res.status(400).json({ msg: "No puedes editar un comentario eliminado" });
         }
@@ -70,16 +93,29 @@ export const updateComentario = async (req, res) => {
 };
 
 export const deleteComentario = async (req, res) => {
-    const { comentarioId } = req.params;
-
+    
     try {
+        const { comentarioId } = req.params;
         const comentario = await comentarioModel.findById(comentarioId);
+
+        
+        if (!req.user || !req.user.id) {
+            return res.status(401).json({
+                succes: false,
+                msg: "Usuario no autenticado",
+            });
+        }
 
         if (!comentario) {
             return res.status(404).json({ msg: "Comentario no encontrado" });
         }
 
-        
+        if (req.user.id.toString() !== comentario.user.toString()) {
+            return res.status(403).json({
+                succes: false,
+                msg: "No puedes eliminar porque no sos el usuario que creo este comentario",
+            });
+        }
 
         comentario.status = false;
         await comentario.save();

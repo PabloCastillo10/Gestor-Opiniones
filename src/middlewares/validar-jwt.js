@@ -5,7 +5,6 @@ import categoriaModel from '../categorias/categoria.model.js';
 
 
 export const validarUserJWT = async (req, res, next) => {
-
     const token = req.header("x-token");
     
     if (!token) {
@@ -15,23 +14,27 @@ export const validarUserJWT = async (req, res, next) => {
     }
 
     try {
-        const {uid} = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
+        const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
 
         const user = await userModel.findById(uid);
 
         if (!user) {
-            return res.status(400).json({ msg: "Token no valido - usuario no existe" });
-        }
-
-        if (user.estado === false) {
-            return res.status(400).json({ msg: "Token no valido - usuario inactivo" });
+            return res.status(401).json({ msg: "Token no válido - usuario no existe" });
         }
         
+        if (user.estado === false) {
+            return res.status(401).json({ msg: "Token no válido - usuario inactivo" });
+        }
+        
+
         req.user = user;
-        next();
+        next();  
     } catch (error) {
-        console.log(error);
-        res.status(400).json({ msg: "Token no valido" });
+        return res.status(401).json({
+            msg: "Token no válido",
+            error: error.message,
+        });
     }
-}
+};
+
 

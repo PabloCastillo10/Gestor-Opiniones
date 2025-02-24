@@ -37,10 +37,5 @@ export const PublicSchema = Schema ({
     }
 )
 
-PublicSchema.methods.toJSON = function () {
-    const { __v, _id,...publicacion } = this.toObject();
-    publicacion.uid = _id;
-    return publicacion;
-}
 
 export default  model('Publicacion', PublicSchema);

@@ -330,7 +330,7 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhYzU0OTQ4MTc4NWQyYjY5OTZhOGYiLCJpYXQiOjE3NDAzNTg3NjAsImV4cCI6MTc0MDM2MjM2MH0.8fql1pN66D9cwOr9cwfUHq3FP4BsyB7C7XOB-eNTKLQ",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JiN2Y2YjU1OTU4ZmY5Y2M0MjM1NjAiLCJpYXQiOjE3NDA0MDY3MTUsImV4cCI6MTc0MDQxMDMxNX0.6AWqKzasA7VgPUewaTTOO4APiIwwOH75qehWGiryYyk",
 								"type": "text"
 							}
 						],
@@ -361,7 +361,7 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JiN2Y2YjU1OTU4ZmY5Y2M0MjM1NjAiLCJpYXQiOjE3NDAzNjQyMDAsImV4cCI6MTc0MDM2NzgwMH0.bSJXRo4uVMo_acpYAhhIHw7No6oYjoycqfmziHf53PM",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JiN2Y2YjU1OTU4ZmY5Y2M0MjM1NjAiLCJpYXQiOjE3NDA0MDY3MTUsImV4cCI6MTc0MDQxMDMxNX0.6AWqKzasA7VgPUewaTTOO4APiIwwOH75qehWGiryYyk",
 								"type": "text"
 							}
 						],
@@ -391,13 +391,13 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhYzU0OTQ4MTc4NWQyYjY5OTZhOGYiLCJpYXQiOjE3NDAzNTg3NjAsImV4cCI6MTc0MDM2MjM2MH0.8fql1pN66D9cwOr9cwfUHq3FP4BsyB7C7XOB-eNTKLQ",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JiN2YyYTU1OTU4ZmY5Y2M0MjM1NWEiLCJpYXQiOjE3NDA0MTA3MjMsImV4cCI6MTc0MDQxNDMyM30.oHm2p6EwinVNFjlBc4er5gUzZkyjC5VWeRtuSPug2LA",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"titulo\": \"Michael Jordan\",\r\n    \"name\": \"dj muertos\",\r\n    \"email\": \"dramirez@gmail.com\",\r\n    \"textoPrincipal\": \"el goat\"\r\n}",
+							"raw": "{\r\n    \"titulo\": \"Michael pepe\",\r\n    \"name\": \"dj lloros\",\r\n    \"email\": \"scurry@gmail.com\",\r\n    \"textoPrincipal\": \"la cabrita 10\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -474,13 +474,13 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhYzU0OTQ4MTc4NWQyYjY5OTZhOGYiLCJpYXQiOjE3NDAzNjc5MzYsImV4cCI6MTc0MDM3MTUzNn0.-kHN3wchqYlh6Gx1ukIw0TvwZWQ2XMa9HaIgMgn249A",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhYzU0OTQ4MTc4NWQyYjY5OTZhOGYiLCJpYXQiOjE3NDA0MTQxNjMsImV4cCI6MTc0MDQxNzc2M30.74KgO5Uld-hNNrilylY7afNcXEMs5BAM3F1cfXjWX_E",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"texto\" : \"Michael curry Jordan >> Scott Pipen Jr\"\r\n}",
+							"raw": "{\r\n    \"texto\" : \"Michael pepe\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -514,7 +514,7 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhYzU0OTQ4MTc4NWQyYjY5OTZhOGYiLCJpYXQiOjE3NDAzNjc5MzYsImV4cCI6MTc0MDM3MTUzNn0.-kHN3wchqYlh6Gx1ukIw0TvwZWQ2XMa9HaIgMgn249A",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhYzU0OTQ4MTc4NWQyYjY5OTZhOGYiLCJpYXQiOjE3NDA0MTQzNTMsImV4cCI6MTc0MDQxNzk1M30.IgB3nbv8vTRwwtz4m37MSo8Wi5AlyHWMCXiUL8HHSQM",
 								"type": "text"
 							}
 						],
@@ -538,6 +538,46 @@
 									"value": "",
 									"disabled": true
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Desactivar Comentario a Publicacion",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JhYzU0OTQ4MTc4NWQyYjY5OTZhOGYiLCJpYXQiOjE3NDA0MTQzNTMsImV4cCI6MTc0MDQxNzk1M30.IgB3nbv8vTRwwtz4m37MSo8Wi5AlyHWMCXiUL8HHSQM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinion/comentarios/67bb827593d6074d5b114561/67bbea65badfbf816e8fc17e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinion",
+								"comentarios",
+								"67bb827593d6074d5b114561",
+								"67bbea65badfbf816e8fc17e"
 							]
 						}
 					},

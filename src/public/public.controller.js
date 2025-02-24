@@ -2,6 +2,8 @@ import categoriaModel from "../categorias/categoria.model.js";
 import publicModel from "./public.model.js";
 import userModel from "../users/user.model.js";
 import comentarioModel from "../comentario/comentario.model.js";
+import { generarJWT } from "../helpers/generate-jwt.js";
+import { request, response } from "express";
 
 
 export const savePublicacion = async (req, res) => {
@@ -52,7 +54,7 @@ export const savePublicacion = async (req, res) => {
     }
 }
 
-export const getPublicaciones = async (req, res) => {
+export const getPublicaciones = async (req = request, res = response) => {
     try{
         const publicaciones = await publicModel.find()
         .populate('categoria', 'name')
@@ -76,7 +78,6 @@ export const getPublicaciones = async (req, res) => {
     }
 }
 
-
 export const updatePublicacion = async (req, res = response) => {
     try {
         const {id} = req.params;
@@ -91,17 +92,33 @@ export const updatePublicacion = async (req, res = response) => {
                     msg: "Categoría no encontrada",
                 });
             }
+        
+
             data.categoria = nuevaCategoria._id; 
         }
 
-      
+        if (!req.user || !req.user.id) {
+            return res.status(401).json({
+                succes: false,
+                msg: "Usuario no autenticado",
+            });
+        }
 
-        
+        const publicacion = await publicModel.findById(id);
+        if (!publicacion) {
+            return res.status(404).json({
+                succes: false,
+                msg: "Publicación no encontrada",
+            });
+        }
 
-        const publicacion = await publicModel.findByIdAndUpdate(id, data, {new: true})
-
-        
-
+        if (req.user.id.toString() !== publicacion.user.toString()) {
+            return res.status(403).json({
+                succes: false,
+                msg: "No puedes actualizar porque no sos el usuario que creo esta publicación",
+            });
+        }
+         await publicModel.findByIdAndUpdate(id, data, {new: true})
         res.status(200).json({
             succes: true,
             msg: 'Publicación Actualizada Correctamente',
@@ -117,28 +134,51 @@ export const updatePublicacion = async (req, res = response) => {
 } 
 
 
-export const deletePublicacion = async (req, res) => {
 
-    const {id} = req.params;
 
-    try{
-        
-        
-        
-        await publicModel.findByIdAndUpdate(id, {status: false}, {new: true});
-        
+
+export const deletePublicacion = async (req, res = response) => {
+    try {
+        const { id } = req.params;
+
+        if (!req.user || !req.user.id) {
+            return res.status(401).json({
+                succes: false,
+                msg: "Usuario no autenticado",
+            });
+        }
+
+        const publicacion = await publicModel.findById(id);
+        if (!publicacion) {
+            return res.status(404).json({
+                succes: false,
+                msg: "Publicación no encontrada",
+            });
+        }
+
+        if (req.user.id.toString() !== publicacion.user.toString()) {
+            return res.status(403).json({
+                succes: false,
+                msg: "No puedes eliminar porque no sos el usuario que creo esta publicación",
+            });
+        }
+
+        await publicModel.findByIdAndUpdate(id, { status: false }, { new: true });
+
         res.status(200).json({
             succes: true,
-            msg: 'Publicación Eliminada Correctamente'
+            msg: "Publicación Eliminada Correctamente",
         });
     } catch (error) {
+        console.log(error);
         res.status(500).json({
             succes: false,
-            msg: 'Error al eliminar la publicación',
-            error: error.message
-        })
+            msg: "Error al eliminar la publicación",
+            error,
+        });
     }
-}
+};
+
 
 export const activatePublicacion = async (req, res) => {
     const {id} = req.params;

@@ -11,9 +11,9 @@ router.post(
 
 router.get("/", getPublicaciones)
 
-router.put("/:id", updatePublicacion, validarUserJWT)
+router.put("/:id", validarUserJWT, updatePublicacion)
 
-router.delete("/:id", deletePublicacion, validarUserJWT)
+router.delete("/:id", validarUserJWT, deletePublicacion)
 
 router.put("/activate/:id", activatePublicacion, validarUserJWT)
 

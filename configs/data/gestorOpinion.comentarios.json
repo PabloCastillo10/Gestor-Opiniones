@@ -8,12 +8,12 @@
   "user": {
     "$oid": "67bac549481785d2b6996a8f"
   },
-  "texto": "Michael curry Jordan >> Scott Pipen Jr",
+  "texto": "Michael pepe",
   "status": true,
   "createdAt": {
     "$date": "2025-02-24T03:41:25.735Z"
   },
   "updatedAt": {
-    "$date": "2025-02-24T04:21:33.769Z"
+    "$date": "2025-02-24T16:28:05.613Z"
   }
 }]

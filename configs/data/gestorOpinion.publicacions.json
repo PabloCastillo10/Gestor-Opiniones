@@ -2,19 +2,19 @@
   "_id": {
     "$oid": "67bb7d1855958ff9cc423557"
   },
-  "titulo": "Michael Jordan",
+  "titulo": "Michael pepe",
   "categoria": {
-    "$oid": "67bad592068afdfd8362d3a5"
+    "$oid": "67bac77c0baa4ea0fd9851b8"
   },
   "user": {
     "$oid": "67bb7f2a55958ff9cc42355a"
   },
-  "textoPrincipal": "el goat",
+  "textoPrincipal": "la cabrita 10",
   "createdAt": {
     "$date": "2025-02-23T19:55:04.652Z"
   },
   "updatedAt": {
-    "$date": "2025-02-24T01:09:31.065Z"
+    "$date": "2025-02-24T15:25:31.212Z"
   }
 },
 {
@@ -33,7 +33,7 @@
     "$date": "2025-02-23T20:17:57.873Z"
   },
   "updatedAt": {
-    "$date": "2025-02-24T03:41:25.755Z"
+    "$date": "2025-02-24T15:14:58.731Z"
   },
   "status": true,
   "comentarios": [
