@@ -4,12 +4,13 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import {dbConnection} from './mongo.js';
-import userRoutes from '../src/users/user.routes.js'
-import categoriaRoutes from '../src/categorias/categoria.routes.js'
+
+import cursoRoutes from '../src/cursos/curso.routes.js'
 import publicacionRoutes from '../src/public/public.routes.js'
 import comentarioRoutes from '../src/comentario/comentario.routes.js'
-import { createAdmin } from '../src/users/user.controller.js';
-import { defaultCategoria } from '../src/categorias/categoria.controller.js';
+import { TallerCurso } from '../src/cursos/curso.controller.js';
+import { TecnologiaCurso } from '../src/cursos/curso.controller.js';
+import { PracticaCurso } from '../src/cursos/curso.controller.js';
 
 const configurarMiddlewares = (app) => {
     app.use(express.urlencoded({extended: false}));
@@ -21,8 +22,7 @@ const configurarMiddlewares = (app) => {
 
 
 const routes = (app) => {
-    app.use('/gestorOpinion/users', userRoutes);
-    app.use('/gestorOpinion/categorias', categoriaRoutes);
+    app.use('/gestorOpinion/cursos', cursoRoutes);
     app.use('/gestorOpinion/publicaciones', publicacionRoutes);
     app.use('/gestorOpinion/comentarios', comentarioRoutes);
 }
@@ -30,8 +30,9 @@ const routes = (app) => {
     try{
         await dbConnection();
         console.log("Conexión a la base de datos exitosa");
-        await createAdmin();
-        await defaultCategoria();
+        await TallerCurso();
+        await TecnologiaCurso();
+        await PracticaCurso();
     }catch(error){
         console.error('Error conectando a la base de datos', error);
         process.exit(1);

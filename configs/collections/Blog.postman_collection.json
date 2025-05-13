@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "6de63f7a-97de-4a7e-beba-c2df7ef6825f",
+		"name": "Blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41636862"
+	},
+	"item": [
+		{
+			"name": "Publicaciones",
+			"item": [
+				{
+					"name": "Listar Publicaciones",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\" : \"Lebron James\",\r\n    \"name\" : \"dj lloros\",\r\n    \"email\" : \"ljames@gmail.com\",\r\n    \"textoPrincipal\" : \"Lebron James el jugador mas completo de la nba\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinion/cursos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinion",
+								"cursos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Publicaciones",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\" : \"Blog Taller\",\r\n    \"cursoName\" : \"Taller\",\r\n    \"autor\" : \"Daniel\",\r\n    \"texto\" : \"El proyecto consiste en crear un blog de aprendizaje donde se publicarán las actividades de los tres cursos del área técnica. Este blog servirá como un registro organizado de los trabajos y proyectos de aprendizaje, accesible para cualquier visitante. Las publicaciones serán gestionadas únicamente desde el Backend, mientras que los visitantes podrán interactuar agregando comentarios desde el Frontend sin necesidad de crear una cuenta.\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinion/publicaciones/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinion",
+								"publicaciones",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,8 +1,8 @@
 import { Schema, model } from "mongoose";
 
 
-const categoriaSchema = Schema({
-        name: {
+const cursoSchema = Schema({
+        cursoName: {
             type: String,
             required: true,
             unique: true,
@@ -21,10 +21,6 @@ const categoriaSchema = Schema({
     }
 )
 
-categoriaSchema.methods.toJSON = function () {
-    const { __v, _id,...categoria } = this.toObject();
-    categoria.uid = _id;
-    return categoria;
-}
 
-export default model('Categoria', categoriaSchema);
+
+export default model('Curso', cursoSchema);

@@ -3,21 +3,19 @@ import { model, Schema } from "mongoose";
 export const PublicSchema = Schema ({
             titulo: {
                 type: String,
-                required: true
+
             },
-            categoria: {
+            curso: {
                 type: Schema.Types.ObjectId,
-                ref: 'Categoria',
-                required: true
+                ref: 'Curso',
             },
-            user: {
-                type: Schema.Types.ObjectId,
-                ref: 'User',
-                required: true
-            },
-            textoPrincipal: {
+            autor: {
                 type: String,
-                required: true
+
+            },
+            texto: {
+                type: String,
+
             },
             comentarios: [
                 {

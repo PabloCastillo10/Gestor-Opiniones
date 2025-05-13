@@ -7,14 +7,17 @@ export const ComentarioSchema = Schema({
         required: true
     },
     user: {
-        type:Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
+        type : String
     },
     texto: {
         type: String,
         required: true
     },
+    fecha: {
+        type: Date,
+        required: true
+    },
+
     status: {
         type: Boolean,
         default: true
