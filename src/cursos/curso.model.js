@@ -4,7 +4,6 @@ import { Schema, model } from "mongoose";
 const cursoSchema = Schema({
         cursoName: {
             type: String,
-            required: true,
             unique: true,
         },
         description: {

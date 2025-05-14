@@ -1,6 +1,5 @@
 import comentarioModel from "./comentario.model.js";
 import publicModel from "../public/public.model.js";
-import { validateUserComentario } from "../helpers/db-validator-comentario.js";
 
 
 
