@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "6de63f7a-97de-4a7e-beba-c2df7ef6825f",
+		"_postman_id": "65caffcc-9d55-4b8b-b93d-2ede633f0830",
 		"name": "Blog",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "41636862"
@@ -10,7 +10,7 @@
 			"name": "Publicaciones",
 			"item": [
 				{
-					"name": "Listar Publicaciones",
+					"name": "Listar Cursos",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -50,7 +50,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"titulo\" : \"Blog Taller\",\r\n    \"cursoName\" : \"Taller\",\r\n    \"autor\" : \"Daniel\",\r\n    \"texto\" : \"El proyecto consiste en crear un blog de aprendizaje donde se publicarán las actividades de los tres cursos del área técnica. Este blog servirá como un registro organizado de los trabajos y proyectos de aprendizaje, accesible para cualquier visitante. Las publicaciones serán gestionadas únicamente desde el Backend, mientras que los visitantes podrán interactuar agregando comentarios desde el Frontend sin necesidad de crear una cuenta.\"\r\n    \r\n}",
+							"raw": "{\r\n    \"titulo\" : \"Practica Supervisadaa\",\r\n    \"cursoName\" : \"Practica\",\r\n    \"autor\" : \"Elmer\",\r\n    \"texto\" : \"Practica Supervisada pretende conjuntar las áreas de Taller III y Tecnología III, dandole un enfoque mas externo y acercando a la realidad de la industria de la tecnologia.\"\r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -68,6 +68,136 @@
 								"gestorOpinion",
 								"publicaciones",
 								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Publicaciones",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\" : \"Lebron James\",\r\n    \"name\" : \"dj lloros\",\r\n    \"email\" : \"ljames@gmail.com\",\r\n    \"textoPrincipal\" : \"Lebron James el jugador mas completo de la nba\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinion/publicaciones/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinion",
+								"publicaciones",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comentarios",
+			"item": [
+				{
+					"name": "Editar Comentario",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"texto\" : \"hola\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinion/comentarios/6823ff586600e5abfda5e0c3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinion",
+								"comentarios",
+								"6823ff586600e5abfda5e0c3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Comentario",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"Luis\",\r\n    \"texto\": \"Muy buena publicación\",\r\n    \"fecha\": \"2025-05-13\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinion/comentarios/Blog Taller",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinion",
+								"comentarios",
+								"Blog Taller"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Comentario",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinion/comentarios/6823ff586600e5abfda5e0c3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinion",
+								"comentarios",
+								"6823ff586600e5abfda5e0c3"
 							]
 						}
 					},
