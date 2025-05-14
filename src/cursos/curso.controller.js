@@ -18,11 +18,11 @@ export const getCursos = async (req, res) => {
 export const TallerCurso = async () => {
     try {
 
-        const verifyCurso = await cursoModel.findOne({ name: "Taller" });
+        const verifyCurso = await cursoModel.findOne({ cursoName: "Taller" });
 
         if (!verifyCurso) {
             const tallerCurso = new cursoModel({
-                name: "Taller",
+                cursoName: "Taller",
                 description: "Curso creado desde el sistema"
             });
     
@@ -40,11 +40,11 @@ export const TallerCurso = async () => {
 export const PracticaCurso = async () => {
     try {
 
-        const verifyCurso = await cursoModel.findOne({ name: "Practica" });
+        const verifyCurso = await cursoModel.findOne({ cursoName: "Practica" });
 
         if (!verifyCurso) {
             const practicaCurso = new cursoModel({
-                name: "Practica",
+                cursoName: "Practica",
                 description: "Curso creado desde el sistema"
             });
     
@@ -62,11 +62,11 @@ export const PracticaCurso = async () => {
 export const TecnologiaCurso = async () => {
     try {
 
-        const verifyCurso = await cursoModel.findOne({ name: "Tecnologia" });
+        const verifyCurso = await cursoModel.findOne({ cursoName: "Tecnologia" });
 
         if (!verifyCurso) {
             const tecnologiaCurso = new cursoModel({
-                name: "Tecnologia",
+                cursoName: "Tecnologia",
                 description: "Curso creado desde el sistema"
             });
     

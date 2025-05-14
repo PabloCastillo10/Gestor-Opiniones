@@ -7,9 +7,9 @@ const router = Router();
 
 router.post("/:titulo",  validarCampos, saveComentario)
 
-router.put("/:publicacionId/:comentarioId",  updateComentario)
+router.put("/:id", updateComentario)
 
-router.delete("/:publicacionId/:comentarioId", deleteComentario)
+router.delete("/:id", deleteComentario)
 
 
 

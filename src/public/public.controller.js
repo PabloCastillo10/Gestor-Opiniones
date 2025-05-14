@@ -3,10 +3,12 @@ import publicModel from "./public.model.js";
 import comentarioModel from "../comentario/comentario.model.js";
 import { request, response } from "express";
 import cursoModel from "../cursos/curso.model.js";
+import { validateTitulo, validateAutor } from "../helpers/db-validator-publicacion.js";
 
 
 export const savePublicacion = async (req, res) => {
-    const {titulo, cursoName, autor, texto, ...data} = req.body;
+   const data = req.body || {};
+    console.log(data)
     try {
          const curso = await cursoModel.findOne({ cursoName: data.cursoName});
 
@@ -18,14 +20,19 @@ export const savePublicacion = async (req, res) => {
                 
             });
         }
+
+
+        await validateTitulo(data.titulo);
+        await validateAutor(data.autor);
+
+        
         const publicacion = new publicModel({
-            titulo,
+            ...data,
             cursoName: curso.cursoName,
-            autor,
-            texto,
             curso: curso._id,
 
         });
+       
         await publicacion.save();
 
         const publicacionGuardada = await publicModel.findById(publicacion._id)
@@ -69,3 +76,5 @@ export const getPublicaciones = async (req = request, res = response) => {
         })
     }
 }
+
+

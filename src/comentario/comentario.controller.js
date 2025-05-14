@@ -1,12 +1,14 @@
 import comentarioModel from "./comentario.model.js";
 import publicModel from "../public/public.model.js";
+import { validateUserComentario } from "../helpers/db-validator-comentario.js";
+
 
 
 export const saveComentario = async (req, res) => {
+    
+    const { user = "anonimo", texto, fecha, ...data} = req.body;
     const { titulo } = req.params;
-    const data = req.body;
     console.log(data)
-
     try {
         const publicacion = await publicModel.findOne({ titulo: titulo });
 
@@ -17,20 +19,28 @@ export const saveComentario = async (req, res) => {
             });
         }
 
+       
+
         const comentario = new comentarioModel({
+            titulo : publicacion.titulo,
+            user,
+            texto,
+            fecha,
             publicacion: publicacion._id,
-            ...data
+            
         });
-
+        await validateUserComentario(user);
         await comentario.save();
-
         publicacion.comentarios.push(comentario._id);
         await publicacion.save();
+
+         const comentarioGuardado = await comentarioModel.findById(comentario._id)
+         .populate('publicacion', 'titulo')
 
         res.status(201).json({
             msg: "Comentario agregado correctamente",
             success: true,
-            comentario
+            comentario : comentarioGuardado
         });
     } catch (error) {
         console.error(error);
@@ -44,11 +54,11 @@ export const saveComentario = async (req, res) => {
 
 
 export const updateComentario = async (req, res) => {
-    const { userComentario } = req.params;
+    const { id } = req.params;
     const { texto } = req.body;
 
     try {
-        const comentario = await comentarioModel.findOne({ userComentario, status: true });
+        const comentario = await comentarioModel.findOne({ _id: id, status: true });
 
         if (!comentario) {
             return res.status(404).json({ msg: "Comentario no encontrado" });
@@ -64,11 +74,12 @@ export const updateComentario = async (req, res) => {
     }
 };
 
+
 export const deleteComentario = async (req, res) => {
-    const { userComentario } = req.params;
+    const { id } = req.params;
 
     try {
-        const comentario = await comentarioModel.findOne({ userComentario, status: true });
+        const comentario = await comentarioModel.findOne({ _id: id, status: true });
 
         if (!comentario) {
             return res.status(404).json({ msg: "Comentario no encontrado" });
@@ -83,5 +94,6 @@ export const deleteComentario = async (req, res) => {
         res.status(500).json({ msg: "Error al eliminar el comentario", error: error.message });
     }
 };
+
 
 
