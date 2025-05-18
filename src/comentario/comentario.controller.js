@@ -5,7 +5,7 @@ import publicModel from "../public/public.model.js";
 
 export const saveComentario = async (req, res) => {
     
-    const { user = "anonimo", texto, fecha, ...data} = req.body;
+    const { user = "Anonimo", texto, fecha, ...data} = req.body;
     const { titulo } = req.params;
     console.log(data)
     try {
@@ -28,7 +28,6 @@ export const saveComentario = async (req, res) => {
             publicacion: publicacion._id,
             
         });
-        await validateUserComentario(user);
         await comentario.save();
         publicacion.comentarios.push(comentario._id);
         await publicacion.save();

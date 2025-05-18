@@ -23,6 +23,10 @@ export const PublicSchema = Schema ({
                     ref: 'Comentario',
                 }
             ],
+            fecha : {
+                type: Date,
+                default: Date.now
+            },
             status: {
                 type: Boolean,
                 default: true

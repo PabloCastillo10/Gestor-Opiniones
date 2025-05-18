@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "6823d1f15d010414af968939"
+  },
+  "cursoName": "Taller",
+  "description": "Curso creado desde el sistema",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-05-13T23:12:49.620Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-13T23:12:49.620Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6823d200a0cfd1d61ab0a14f"
+  },
+  "cursoName": "Practica",
+  "description": "Curso creado desde el sistema",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-05-13T23:13:04.141Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-13T23:13:04.141Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6823d20a0b0cbe2c2c196970"
+  },
+  "cursoName": "Tecnologia",
+  "description": "Curso creado desde el sistema",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-05-13T23:13:14.306Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-13T23:13:14.306Z"
+  }
+}]

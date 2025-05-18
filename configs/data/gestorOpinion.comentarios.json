@@ -1,19 +1,420 @@
 [{
   "_id": {
-    "$oid": "67bbea65badfbf816e8fc17e"
+    "$oid": "6823d6032131fd6d9b136d34"
   },
   "publicacion": {
-    "$oid": "67bb827593d6074d5b114561"
+    "$oid": "6823d5ba2131fd6d9b136d2f"
   },
-  "user": {
-    "$oid": "67bac549481785d2b6996a8f"
+  "user": "Luis",
+  "texto": "siempre lo mejor",
+  "fecha": {
+    "$date": "2025-05-13T00:00:00.000Z"
   },
-  "texto": "Michael pepe",
   "status": true,
   "createdAt": {
-    "$date": "2025-02-24T03:41:25.735Z"
+    "$date": "2025-05-13T23:30:11.355Z"
   },
   "updatedAt": {
-    "$date": "2025-02-24T16:28:05.613Z"
+    "$date": "2025-05-17T23:51:06.305Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6823ff586600e5abfda5e0c3"
+  },
+  "publicacion": {
+    "$oid": "6823d5ba2131fd6d9b136d2f"
+  },
+  "user": "anonimo",
+  "texto": "pepe",
+  "fecha": {
+    "$date": "2025-05-13T00:00:00.000Z"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-14T02:26:32.156Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-17T20:02:45.521Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6828d9b2c941a40a4b95d76a"
+  },
+  "publicacion": {
+    "$oid": "6823d5ba2131fd6d9b136d2f"
+  },
+  "user": "aña",
+  "texto": "olaa",
+  "fecha": {
+    "$date": "2025-05-17T18:47:14.771Z"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-17T18:47:14.843Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-17T18:48:51.981Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6828db73c941a40a4b95d77f"
+  },
+  "publicacion": {
+    "$oid": "6828084b6f4092393006c485"
+  },
+  "user": "ola",
+  "texto": "10",
+  "fecha": {
+    "$date": "2025-05-17T18:54:43.057Z"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-17T18:54:43.072Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-17T19:00:08.652Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6828e62ec941a40a4b95d792"
+  },
+  "publicacion": {
+    "$oid": "6823d5ba2131fd6d9b136d2f"
+  },
+  "user": "messi",
+  "texto": "goat",
+  "fecha": {
+    "$date": "2025-05-17T19:40:30.783Z"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-17T19:40:30.849Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-17T19:40:30.849Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6828e68ec941a40a4b95d7ae"
+  },
+  "publicacion": {
+    "$oid": "6823d5ba2131fd6d9b136d2f"
+  },
+  "user": "goat",
+  "texto": "30",
+  "fecha": {
+    "$date": "2025-05-17T19:42:06.834Z"
+  },
+  "status": false,
+  "createdAt": {
+    "$date": "2025-05-17T19:42:06.850Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-17T19:46:46.633Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6828e7c5c941a40a4b95d7c0"
+  },
+  "publicacion": {
+    "$oid": "6823d5ba2131fd6d9b136d2f"
+  },
+  "user": "radio",
+  "texto": "sisi",
+  "fecha": {
+    "$date": "2025-05-17T19:47:17.978Z"
+  },
+  "status": false,
+  "createdAt": {
+    "$date": "2025-05-17T19:47:17.991Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-17T19:53:44.450Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6828e95cc941a40a4b95d7dc"
+  },
+  "publicacion": {
+    "$oid": "6823d5ba2131fd6d9b136d2f"
+  },
+  "user": "sasa",
+  "texto": "uno1",
+  "fecha": {
+    "$date": "2025-05-17T19:54:04.787Z"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-17T19:54:04.802Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-17T19:54:36.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6828e986c941a40a4b95d7e7"
+  },
+  "publicacion": {
+    "$oid": "6823d5ba2131fd6d9b136d2f"
+  },
+  "user": "esePepe",
+  "texto": "12345",
+  "fecha": {
+    "$date": "2025-05-17T19:54:46.116Z"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-17T19:54:46.138Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-17T19:54:46.138Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6828eabec941a40a4b95d7ed"
+  },
+  "publicacion": {
+    "$oid": "6823d5ba2131fd6d9b136d2f"
+  },
+  "user": "Titi",
+  "texto": "Muy buena ",
+  "fecha": {
+    "$date": "2025-05-13T00:00:00.000Z"
+  },
+  "status": false,
+  "createdAt": {
+    "$date": "2025-05-17T19:59:58.364Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-17T20:13:41.360Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6828eebf3684b3103ec07826"
+  },
+  "publicacion": {
+    "$oid": "6823d5ba2131fd6d9b136d2f"
+  },
+  "user": "ola",
+  "texto": "123",
+  "fecha": {
+    "$date": "2025-05-17T20:17:03.869Z"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-17T20:17:03.910Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-17T20:17:03.910Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6828eed43684b3103ec0782c"
+  },
+  "publicacion": {
+    "$oid": "6823d5ba2131fd6d9b136d2f"
+  },
+  "user": "brawl",
+  "texto": "asaaaa",
+  "fecha": {
+    "$date": "2025-05-17T20:17:24.369Z"
+  },
+  "status": false,
+  "createdAt": {
+    "$date": "2025-05-17T20:17:24.381Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-17T22:32:37.733Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68290e9a3684b3103ec07857"
+  },
+  "publicacion": {
+    "$oid": "6823d5ba2131fd6d9b136d2f"
+  },
+  "user": "bunny",
+  "texto": "12",
+  "fecha": {
+    "$date": "2025-05-17T22:32:58.954Z"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-17T22:32:58.974Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-17T23:34:46.442Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68291d32d80060f1da451e1b"
+  },
+  "publicacion": {
+    "$oid": "6823d5ba2131fd6d9b136d2f"
+  },
+  "user": "ronaldo",
+  "texto": "sasa",
+  "fecha": {
+    "$date": "2025-05-17T23:35:14.198Z"
+  },
+  "status": false,
+  "createdAt": {
+    "$date": "2025-05-17T23:35:14.234Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-17T23:35:23.017Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68292084d80060f1da451e2a"
+  },
+  "publicacion": {
+    "$oid": "6823d5ba2131fd6d9b136d2f"
+  },
+  "user": "mol",
+  "texto": "aña",
+  "fecha": {
+    "$date": "2025-05-17T23:49:24.381Z"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-17T23:49:24.418Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-17T23:50:49.042Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682921acd80060f1da451e3f"
+  },
+  "publicacion": {
+    "$oid": "6823e7f7b7ec21eb229552e7"
+  },
+  "user": "pepe",
+  "texto": "el curso me parece increible.",
+  "fecha": {
+    "$date": "2025-05-17T23:54:20.499Z"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-17T23:54:20.538Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-17T23:55:16.425Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682922bbd80060f1da451e57"
+  },
+  "publicacion": {
+    "$oid": "6823d5ba2131fd6d9b136d2f"
+  },
+  "user": "xd",
+  "texto": "122",
+  "fecha": {
+    "$date": "2025-05-17T23:58:51.922Z"
+  },
+  "status": false,
+  "createdAt": {
+    "$date": "2025-05-17T23:58:51.958Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T00:01:04.566Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68292347d80060f1da451e62"
+  },
+  "publicacion": {
+    "$oid": "6823d5ba2131fd6d9b136d2f"
+  },
+  "user": "anonimo",
+  "texto": "ola",
+  "fecha": {
+    "$date": "2025-05-18T00:01:11.300Z"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-18T00:01:11.333Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T00:01:26.207Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682935e1d80060f1da451e70"
+  },
+  "publicacion": {
+    "$oid": "682914c3d80060f1da451ddf"
+  },
+  "user": "Pablo",
+  "texto": "En Taller III es mejor",
+  "fecha": {
+    "$date": "2025-05-18T01:20:32.892Z"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-18T01:20:33.027Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T01:27:29.958Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68293b37af9f4216511c0837"
+  },
+  "publicacion": {
+    "$oid": "68293abfaf9f4216511c0829"
+  },
+  "user": "Enrique",
+  "texto": "Tecnologia easy",
+  "fecha": {
+    "$date": "2025-05-18T01:43:19.951Z"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-18T01:43:19.992Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T01:43:19.992Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682a11edb9c96b51b4884d05"
+  },
+  "publicacion": {
+    "$oid": "682a101cb9c96b51b4884cf2"
+  },
+  "user": "Pablo",
+  "texto": "Taller I buena clase.",
+  "fecha": {
+    "$date": "2025-05-18T16:59:25.610Z"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-18T16:59:25.678Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T17:00:00.829Z"
   }
 }]

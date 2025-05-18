@@ -1,47 +1,175 @@
 [{
   "_id": {
-    "$oid": "67bb7d1855958ff9cc423557"
+    "$oid": "6823d5ba2131fd6d9b136d2f"
   },
-  "titulo": "Michael pepe",
-  "categoria": {
-    "$oid": "67bac77c0baa4ea0fd9851b8"
+  "titulo": "Blog Taller",
+  "curso": {
+    "$oid": "6823d1f15d010414af968939"
   },
-  "user": {
-    "$oid": "67bb7f2a55958ff9cc42355a"
-  },
-  "textoPrincipal": "la cabrita 10",
+  "autor": "Daniel",
+  "texto": "El proyecto consiste en crear un blog de aprendizaje donde se publicarán las actividades de los tres cursos del área técnica. Este blog servirá como un registro organizado de los trabajos y proyectos de aprendizaje, accesible para cualquier visitante. Las publicaciones serán gestionadas únicamente desde el Backend, mientras que los visitantes podrán interactuar agregando comentarios desde el Frontend sin necesidad de crear una cuenta.",
+  "comentarios": [
+    {
+      "$oid": "6823d6032131fd6d9b136d34"
+    },
+    {
+      "$oid": "6823ff586600e5abfda5e0c3"
+    },
+    {
+      "$oid": "6828d9b2c941a40a4b95d76a"
+    },
+    {
+      "$oid": "6828e62ec941a40a4b95d792"
+    },
+    {
+      "$oid": "6828e68ec941a40a4b95d7ae"
+    },
+    {
+      "$oid": "6828e7c5c941a40a4b95d7c0"
+    },
+    {
+      "$oid": "6828e95cc941a40a4b95d7dc"
+    },
+    {
+      "$oid": "6828e986c941a40a4b95d7e7"
+    },
+    {
+      "$oid": "6828eabec941a40a4b95d7ed"
+    },
+    {
+      "$oid": "6828eebf3684b3103ec07826"
+    },
+    {
+      "$oid": "6828eed43684b3103ec0782c"
+    },
+    {
+      "$oid": "68290e9a3684b3103ec07857"
+    },
+    {
+      "$oid": "68291d32d80060f1da451e1b"
+    },
+    {
+      "$oid": "68292084d80060f1da451e2a"
+    },
+    {
+      "$oid": "682922bbd80060f1da451e57"
+    },
+    {
+      "$oid": "68292347d80060f1da451e62"
+    }
+  ],
+  "status": true,
   "createdAt": {
-    "$date": "2025-02-23T19:55:04.652Z"
+    "$date": "2025-05-13T23:28:58.454Z"
   },
   "updatedAt": {
-    "$date": "2025-02-24T15:25:31.212Z"
+    "$date": "2025-05-18T00:01:11.341Z"
+  },
+  "fecha": {
+    "$date": "2025-05-17T23:35:14.230Z"
   }
 },
 {
   "_id": {
-    "$oid": "67bb827593d6074d5b114561"
+    "$oid": "6823e7f7b7ec21eb229552e7"
   },
-  "titulo": "Lebron James",
-  "categoria": {
-    "$oid": "67bac77c0baa4ea0fd9851b8"
+  "titulo": "Practica Supervisada",
+  "curso": {
+    "$oid": "6823d200a0cfd1d61ab0a14f"
   },
-  "user": {
-    "$oid": "67bb7f6b55958ff9cc423560"
-  },
-  "textoPrincipal": "Lebron James el jugador mas completo de la nba",
-  "createdAt": {
-    "$date": "2025-02-23T20:17:57.873Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-24T15:14:58.731Z"
-  },
-  "status": true,
+  "autor": "Elmer",
+  "texto": "Practica Supervisada pretende conjuntar las áreas de Taller III y Tecnología III, dandole un enfoque mas externo y acercando a la realidad de la industria de la tecnologia.",
   "comentarios": [
     {
-      "$oid": "67bbe86d9fdb2bf7d4422bba"
-    },
-    {
-      "$oid": "67bbea65badfbf816e8fc17e"
+      "$oid": "682921acd80060f1da451e3f"
     }
-  ]
+  ],
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-14T00:46:47.011Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-17T23:54:20.550Z"
+  },
+  "fecha": {
+    "$date": "2025-05-17T23:54:20.532Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682914c3d80060f1da451ddf"
+  },
+  "titulo": "Taller II",
+  "curso": {
+    "$oid": "6823d1f15d010414af968939"
+  },
+  "autor": "Santos",
+  "texto": "Practica Supervisada pretende conjuntar las áreas de Taller III y Tecnología III, dandole un enfoque mas externo y acercando a la realidad de la industria de la tecnologia.",
+  "comentarios": [
+    {
+      "$oid": "682935e1d80060f1da451e70"
+    }
+  ],
+  "fecha": {
+    "$date": "2024-05-15T00:00:00.000Z"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-17T22:59:15.263Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T01:20:33.054Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68293abfaf9f4216511c0829"
+  },
+  "titulo": "Tecnologia III",
+  "curso": {
+    "$oid": "6823d20a0b0cbe2c2c196970"
+  },
+  "autor": "Rodrigo",
+  "texto": "Tecnologia  pretende conjuntar las áreas de Taller III y Tecnología III, dandole un enfoque mas externo y acercando a la realidad de la industria de la tecnologia.",
+  "comentarios": [
+    {
+      "$oid": "68293b37af9f4216511c0837"
+    }
+  ],
+  "fecha": {
+    "$date": "2024-06-15T00:00:00.000Z"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-18T01:41:19.688Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T01:43:20.012Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682a101cb9c96b51b4884cf2"
+  },
+  "titulo": "Taller I",
+  "curso": {
+    "$oid": "6823d1f15d010414af968939"
+  },
+  "autor": "Kinal",
+  "texto": "Taller  pretende conjuntar las áreas de Taller III y Tecnología III, dandole un enfoque mas externo y acercando a la realidad de la industria de la tecnologia.",
+  "comentarios": [
+    {
+      "$oid": "682a11edb9c96b51b4884d05"
+    }
+  ],
+  "fecha": {
+    "$date": "2024-06-15T00:00:00.000Z"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-18T16:51:40.599Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-18T16:59:25.695Z"
+  }
 }]

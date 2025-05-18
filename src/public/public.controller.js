@@ -11,6 +11,7 @@ export const savePublicacion = async (req, res) => {
     console.log(data)
     try {
          const curso = await cursoModel.findOne({ cursoName: data.cursoName});
+         const fechaFinal = data.fecha ? new Date(data.fecha) : new Date();
 
         if(!curso) {
             console.log(curso)
@@ -30,6 +31,7 @@ export const savePublicacion = async (req, res) => {
             ...data,
             cursoName: curso.cursoName,
             curso: curso._id,
+            fecha: fechaFinal
 
         });
        
@@ -57,7 +59,7 @@ export const savePublicacion = async (req, res) => {
 export const getPublicaciones = async (req = request, res = response) => {
     try{
         const publicaciones = await publicModel.find()
-        .populate('curso', 'name')
+        .populate('curso', 'cursoName')
         .populate({
             path: 'comentarios',
             match: { status: true }, 
