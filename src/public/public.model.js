@@ -1,43 +1,41 @@
 import { model, Schema } from "mongoose";
 
-export const PublicSchema = Schema ({
-            titulo: {
-                type: String,
+export const PublicSchema = Schema(
+  {
+    titulo: {
+      type: String,
+    },
+    curso: {
+      type: Schema.Types.ObjectId,
+      ref: "Curso",
+    },
+    autor: {
+      type: Schema.Types.ObjectId,
+      ref: "Usuario",
+      required: true
+    },
+    texto: {
+      type: String,
+    },
+    comentarios: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Comentario",
+      },
+    ],
+    fecha: {
+      type: Date,
+      default: Date.now,
+    },
+    status: {
+      type: Boolean,
+      default: true,
+    },
+  },
+  {
+    timestamps: true,
+    versionKey: false,
+  },
+);
 
-            },
-            curso: {
-                type: Schema.Types.ObjectId,
-                ref: 'Curso',
-            },
-            autor: {
-                type: String,
-
-            },
-            texto: {
-                type: String,
-
-            },
-            comentarios: [
-                {
-                    type: Schema.Types.ObjectId,
-                    ref: 'Comentario',
-                }
-            ],
-            fecha : {
-                type: Date,
-                default: Date.now
-            },
-            status: {
-                type: Boolean,
-                default: true
-            },
-
-        },
-    {
-            timestamps: true,
-            versionKey: false
-    }
-)
-
-
-export default  model('Publicacion', PublicSchema);
+export default model("Publicacion", PublicSchema);

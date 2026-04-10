@@ -11,12 +11,14 @@ import comentarioRoutes from '../src/comentario/comentario.routes.js'
 import { TallerCurso } from '../src/cursos/curso.controller.js';
 import { TecnologiaCurso } from '../src/cursos/curso.controller.js';
 import { PracticaCurso } from '../src/cursos/curso.controller.js';
+import { createAdminUser } from '../src/user.controller.js';
+import userRoutes from '../src/user.routes.js';
 
 const configurarMiddlewares = (app) => {
     app.use(express.urlencoded({extended: false}));
     app.use(cors());
     app.use(express.json());
-    app.use(helmet());
+    app.use(helmet()); 
     app.use(morgan('dev'));
 }
 
@@ -25,6 +27,7 @@ const routes = (app) => {
     app.use('/gestorOpinion/cursos', cursoRoutes);
     app.use('/gestorOpinion/publicaciones', publicacionRoutes);
     app.use('/gestorOpinion/comentarios', comentarioRoutes);
+    app.use('/gestorOpinion/users', userRoutes);
 }
  const conectarDB = async  () => {
     try{
@@ -33,6 +36,7 @@ const routes = (app) => {
         await TallerCurso();
         await TecnologiaCurso();
         await PracticaCurso();
+        await createAdminUser();
     }catch(error){
         console.error('Error conectando a la base de datos', error);
         process.exit(1);

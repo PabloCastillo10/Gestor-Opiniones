@@ -7,7 +7,9 @@ export const ComentarioSchema = Schema({
         required: true
     },
     user: {
-        type : String
+        type : Schema.Types.ObjectId,
+        ref: 'Usuario',
+        required: true
     },
     texto: {
         type: String,
