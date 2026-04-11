@@ -9,10 +9,16 @@ export const PublicSchema = Schema(
       type: Schema.Types.ObjectId,
       ref: "Curso",
     },
+    likes: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Usuario",
+      },
+    ],
     autor: {
       type: Schema.Types.ObjectId,
       ref: "Usuario",
-      required: true
+      required: true,
     },
     texto: {
       type: String,
@@ -37,5 +43,8 @@ export const PublicSchema = Schema(
     versionKey: false,
   },
 );
+
+// antes del export:
+PublicSchema.index({ titulo: "text", texto: "text" });
 
 export default model("Publicacion", PublicSchema);
