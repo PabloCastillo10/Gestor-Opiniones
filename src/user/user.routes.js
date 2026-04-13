@@ -7,8 +7,8 @@ import {
   toggleUserStatus,
   editProfile,
 } from "./user.controller.js";
-import { validarJWT } from "./middlewares/validar-jwt.js";
-import { validarAdmin } from "./middlewares/validate-admin.js";
+import { validarJWT } from "../middlewares/validar-jwt.js";
+import { validarAdmin } from "../middlewares/validate-admin.js";
 
 const router = Router();
 /**

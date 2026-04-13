@@ -10,8 +10,8 @@ import comentarioRoutes from '../src/comentario/comentario.routes.js'
 import { TallerCurso } from '../src/cursos/curso.controller.js';
 import { TecnologiaCurso } from '../src/cursos/curso.controller.js';
 import { PracticaCurso } from '../src/cursos/curso.controller.js';
-import { createAdminUser } from '../src/user.controller.js';
-import userRoutes from '../src/user.routes.js';
+import { createAdminUser } from '../src/user/user.controller.js';
+import userRoutes from '../src/user/user.routes.js';
 import { swaggerSpec } from './swagger.js';
 import swaggerUi from 'swagger-ui-express';
 

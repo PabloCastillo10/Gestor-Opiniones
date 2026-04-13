@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import userModel from "../user.model.js";
+import UserSchema from "../user/user.model.js";
 
 export const validarJWT = async (req, res, next) => {
   const authHeader = req.header("Authorization");
@@ -14,7 +14,7 @@ export const validarJWT = async (req, res, next) => {
   try {
     const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
 
-    const usuario = await userModel.findById(uid).select("-password"); // Excluye el campo de contraseña
+    const usuario = await UserSchema.findById(uid).select("-password"); // Excluye el campo de contraseña
 
     if (!usuario) {
       return res.status(401).json({

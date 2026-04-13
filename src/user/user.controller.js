@@ -1,6 +1,6 @@
 import UserSchema from "./user.model.js";
-import { hash, verify} from "argon2";
-import { generateJWT } from "./helpers/generate-jwt.js";
+import { hash, verify } from "argon2";
+import { generateJWT } from "../helpers/generate-jwt.js";
 import { response, request } from "express";
 
 export const login = async (req = request, res = response) => {
@@ -84,16 +84,17 @@ export const register = async (req = request, res = response) => {
 //Lista de usuarios solo para role ADMIN
 export const listUsers = async (req = request, res = response) => {
   try {
-    const {page = 1, limit = 10} = req.query;
+    const { page = 1, limit = 10 } = req.query;
     const skip = (page - 1) * limit;
-    const users = await UserSchema.find({status: true}).select("-password") // Excluye el campo de contraseña
-    .skip(skip)
-    .limit(parseInt(limit));
+    const users = await UserSchema.find({ status: true })
+      .select("-password") // Excluye el campo de contraseña
+      .skip(skip)
+      .limit(parseInt(limit));
     res.json({
       msg: "Lista de usuarios",
       users,
-        page: parseInt(page),
-        limit: parseInt(limit)
+      page: parseInt(page),
+      limit: parseInt(limit),
     });
   } catch (error) {
     console.log(error);
@@ -116,7 +117,7 @@ export const getProfile = async (req = request, res = response) => {
     console.log(error);
     res.status(500).json({
       msg: "Error en el servidor",
-      error: error.message
+      error: error.message,
     });
   }
 };
@@ -157,7 +158,7 @@ export const editProfile = async (req = request, res = response) => {
     const updatedUser = await UserSchema.findByIdAndUpdate(
       userId,
       { $set: updateData }, //$set para actualizar solo los campos proporcionados
-      { new: true } // Devuelve el documento actualizado
+      { new: true }, // Devuelve el documento actualizado
     ).select("-password"); // Excluye el campo de contraseña
 
     res.json({
@@ -167,15 +168,14 @@ export const editProfile = async (req = request, res = response) => {
   } catch (error) {
     // código 11000 es el error de clave duplicada de MongoDB
     if (error.code === 11000) {
-        const campo = Object.keys(error.keyValue)[0];
-        return res.status(400).json({
-            msg: `El ${campo} "${error.keyValue[campo]}" ya está en uso`,
-        });
+      const campo = Object.keys(error.keyValue)[0];
+      return res.status(400).json({
+        msg: `El ${campo} "${error.keyValue[campo]}" ya está en uso`,
+      });
     }
     res.status(500).json({ msg: "Error en el servidor", error: error.message });
-}
-}
-
+  }
+};
 
 //Funcion para Administrador cambiar status de usuario (activar/desactivar)
 export const toggleUserStatus = async (req = request, res = response) => {
@@ -200,14 +200,14 @@ export const toggleUserStatus = async (req = request, res = response) => {
         username: user.username,
         email: user.email,
         role: user.role,
-        status: user.status
-      }
+        status: user.status,
+      },
     });
-  }  catch (error) {
+  } catch (error) {
     console.log(error);
     res.status(500).json({
       msg: "Error en el servidor",
       error: error.message,
     });
   }
-}
+};
