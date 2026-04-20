@@ -1,4 +1,5 @@
 import cursoModel from './curso.model.js';
+import { uploadImageToCloudinary } from '../middlewares/cloudinary.js';
 
 
 
@@ -32,7 +33,13 @@ export const createCurso = async (req, res) => {
             return res.status(400).json({ msg: 'El curso ya existe' });
         }
 
-        const newCurso = new cursoModel({ cursoName, description });
+        let imagen;
+        if (req.file) {
+            imagen = await uploadImageToCloudinary(req.file.buffer);
+        } else if (req.body.imagen) {
+            imagen = req.body.imagen;
+        }
+        const newCurso = new cursoModel({ cursoName, description, imagen });
         await newCurso.save();
 
         res.status(201).json({
@@ -51,9 +58,19 @@ export const updateCurso = async (req, res) => {
     const { cursoName, description } = req.body;
 
     try {
+        const updateData = {};
+        if (cursoName) updateData.cursoName = cursoName;
+        if (description) updateData.description = description;
+
+        if (req.file) {
+            updateData.imagen = await uploadImageToCloudinary(req.file.buffer);
+        } else if (req.body.imagen) {
+            updateData.imagen = req.body.imagen;
+        }
+
         const updatedCurso = await cursoModel.findByIdAndUpdate(
             id,
-            { cursoName, description },
+            { $set: updateData },
             { new: true }
         );
 
@@ -64,7 +81,7 @@ export const updateCurso = async (req, res) => {
         res.status(200).json({
             msg: 'Curso actualizado exitosamente',
             curso: updatedCurso
-         });
+        });
     } catch (error) {
         console.error(error);
         res.status(500).json({ msg: 'Error al actualizar curso', error: error.message });

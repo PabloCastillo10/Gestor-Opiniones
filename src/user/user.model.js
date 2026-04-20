@@ -20,6 +20,10 @@ const userSchema = new Schema(
       required: [true, "El email es obligatorio"],
       unique: [true, "El email ya está registrado"],
     },
+    avatar: {
+      type: String,
+      default: "https://res.cloudinary.com/dr1ynt1v8/image/upload/v1776705810/Sample_User_Icon_q2rxvd.png",
+    },
     password: {
       type: String,
       required: [true, "La contraseña es obligatoria"],

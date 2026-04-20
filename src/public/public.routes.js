@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { savePublicacion, getPublicaciones, getPublicacionById, getPublicacionesByCurso, updatePublicacion, deletePublicacion, toggleLikePublicacion } from "./public.controller.js";
 import { validarJWT } from "../middlewares/validar-jwt.js";
+import upload from "../middlewares/multer.js";
 
 
 const router = Router();
@@ -16,7 +17,7 @@ const router = Router();
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
  *             type: object
  *             required: [titulo, curso, texto]
@@ -30,6 +31,10 @@ const router = Router();
  *               texto:
  *                 type: string
  *                 example: "Node.js es un entorno de ejecucion para JavaScript"
+ *               imagen:
+ *                 type: string
+ *                 format: binary
+ *                 description: Imagen de la publicacion (opcional)
  *     responses:
  *       201:
  *         description: Publicacion guardada correctamente
@@ -77,7 +82,7 @@ const router = Router();
  *       500:
  *         description: Error en el servidor
  */
-router.post("/", validarJWT, savePublicacion)
+router.post("/", validarJWT, upload.single("imagen"), savePublicacion)
 router.get("/", getPublicaciones)
 
 /**
@@ -182,7 +187,7 @@ router.post("/:id/like", validarJWT, toggleLikePublicacion)
  *         description: ID de la publicacion
  *     requestBody:
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
  *             type: object
  *             properties:
@@ -192,6 +197,10 @@ router.post("/:id/like", validarJWT, toggleLikePublicacion)
  *               texto:
  *                 type: string
  *                 example: "Contenido actualizado"
+ *               imagen:
+ *                 type: string
+ *                 format: binary
+ *                 description: Nueva imagen de la publicacion (opcional)
  *     responses:
  *       200:
  *         description: Publicacion actualizada correctamente
@@ -224,7 +233,7 @@ router.post("/:id/like", validarJWT, toggleLikePublicacion)
  *         description: Publicacion no encontrada
  */
 router.get("/:id", getPublicacionById)
-router.put("/:id", validarJWT, updatePublicacion)
+router.put("/:id", validarJWT, upload.single("imagen"), updatePublicacion)
 router.delete("/:id", validarJWT, deletePublicacion)
 
 

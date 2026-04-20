@@ -9,6 +9,7 @@ import {
 } from "./user.controller.js";
 import { validarJWT } from "../middlewares/validar-jwt.js";
 import { validarAdmin } from "../middlewares/validate-admin.js";
+import upload from "../middlewares/multer.js";
 
 const router = Router();
 /**
@@ -66,7 +67,7 @@ router.post("/login", login);
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
  *             type: object
  *             required: [name, surname, username, email, password]
@@ -86,13 +87,17 @@ router.post("/login", login);
  *               password:
  *                 type: string
  *                 example: "password123"
+ *               avatar:
+ *                 type: string
+ *                 format: binary
+ *                 description: Imagen de perfil del usuario (opcional)
  *     responses:
  *       200:
  *         description: Usuario registrado exitosamente
  *       500:
  *         description: Error en el servidor (puede ser email o username duplicado)
  */
-router.post("/register", register);
+router.post("/register", upload.single("avatar"), register);
 
 /**
  * @openapi
@@ -134,6 +139,10 @@ router.post("/register", register);
  *                 type: string
  *               email:
  *                 type: string
+ *              avatar:
+ *                 type: string
+ *                 format: binary
+ *                 description: Nueva imagen de perfil del usuario (opcional)
  *     responses:
  *       200:
  *         description: Perfil actualizado
@@ -173,7 +182,7 @@ router.post("/register", register);
  * */
 router.get("/users", validarJWT, validarAdmin, listUsers);
 router.get("/profile", validarJWT, getProfile);
-router.put("/profile", validarJWT, editProfile);
+router.put("/profile", validarJWT, upload.single("avatar"), editProfile);
 router.put("/toggle-status/:id", validarJWT, validarAdmin, toggleUserStatus);
 
 export default router;

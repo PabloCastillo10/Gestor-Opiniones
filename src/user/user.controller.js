@@ -2,6 +2,7 @@ import UserSchema from "./user.model.js";
 import { hash, verify } from "argon2";
 import { generateJWT } from "../helpers/generate-jwt.js";
 import { response, request } from "express";
+import { uploadImageToCloudinary } from "../middlewares/cloudinary.js";
 
 export const login = async (req = request, res = response) => {
   const { email, password, username } = req.body;
@@ -55,12 +56,20 @@ export const register = async (req = request, res = response) => {
 
     const encryptedPassword = await hash(data.password);
 
+    let avatar; // Variable para almacenar la URL del avatar, si se proporciona una imagen o un enlace
+    if (req.file) { // Si se proporciona un archivo de imagen, se sube a Cloudinary y se obtiene la URL
+      avatar = await uploadImageToCloudinary(req.file.buffer);
+    } else if (data.avatar) {
+      avatar = data.avatar;
+    }
+
     const user = new UserSchema({
       name: data.name,
       surname: data.surname,
       username: data.username.toLowerCase(),
       email: data.email.toLowerCase(),
       password: encryptedPassword,
+      avatar,
     });
 
     await user.save();
@@ -71,6 +80,7 @@ export const register = async (req = request, res = response) => {
       surname: data.surname,
       username: data.username,
       email: data.email,
+      avatar: user.avatar,
     });
   } catch (error) {
     console.log(error);
@@ -154,6 +164,11 @@ export const editProfile = async (req = request, res = response) => {
     if (username) updateData.username = username.toLowerCase();
     if (email) updateData.email = email.toLowerCase();
     if (password) updateData.password = await hash(password);
+    if (req.file) {
+      updateData.avatar = await uploadImageToCloudinary(req.file.buffer);
+    } else if (req.body.avatar) {
+      updateData.avatar = req.body.avatar;
+    }
 
     const updatedUser = await UserSchema.findByIdAndUpdate(
       userId,

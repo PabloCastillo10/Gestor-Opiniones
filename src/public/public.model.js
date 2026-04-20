@@ -20,6 +20,10 @@ export const PublicSchema = Schema(
       ref: "Usuario",
       required: true,
     },
+    imagen: {
+      type: String,
+      default: "https://res.cloudinary.com/dr1ynt1v8/image/upload/v1776723097/7554733_sr7r0f.png",
+    },
     texto: {
       type: String,
     },

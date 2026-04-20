@@ -2,6 +2,7 @@ import { Router } from "express";
 import { getCursos, createCurso, updateCurso, deleteCurso } from "./curso.controller.js";
 import { validarJWT } from "../middlewares/validar-jwt.js";
 import { validarAdmin } from "../middlewares/validate-admin.js";
+import upload from "../middlewares/multer.js";
 
 
 const router = Router();
@@ -66,7 +67,7 @@ router.get("/", getCursos)
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
  *             type: object
  *             required: [cursoName]
@@ -77,6 +78,10 @@ router.get("/", getCursos)
  *               description:
  *                 type: string
  *                 example: "Curso de desarrollo web moderno"
+ *               imagen:
+ *                 type: string
+ *                 format: binary
+ *                 description: Imagen del curso (opcional)
  *     responses:
  *       201:
  *         description: Curso creado exitosamente
@@ -87,7 +92,7 @@ router.get("/", getCursos)
  *       403:
  *         description: Acceso denegado - solo administradores
  */
-router.post("/create", validarJWT, validarAdmin, createCurso)
+router.post("/create", validarJWT, validarAdmin, upload.single('imagen'), createCurso)
 
 /**
  * @openapi
@@ -107,7 +112,7 @@ router.post("/create", validarJWT, validarAdmin, createCurso)
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
  *             type: object
  *             properties:
@@ -117,6 +122,10 @@ router.post("/create", validarJWT, validarAdmin, createCurso)
  *               description:
  *                 type: string
  *                 example: "Descripción actualizada"
+ *               imagen:
+ *                 type: string
+ *                 format: binary
+ *                 description: Nueva imagen del curso (opcional)
  *     responses:
  *       200:
  *         description: Curso actualizado exitosamente
@@ -127,7 +136,7 @@ router.post("/create", validarJWT, validarAdmin, createCurso)
  *       404:
  *         description: Curso no encontrado
  */
-router.put("/update/:id", validarJWT, validarAdmin, updateCurso)
+router.put("/update/:id", validarJWT, validarAdmin, upload.single('imagen'), updateCurso)
 
 /**
  * @openapi

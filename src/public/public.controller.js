@@ -2,6 +2,7 @@ import publicModel from "./public.model.js";
 import { request, response } from "express";
 import cursoModel from "../cursos/curso.model.js";
 import { validateTitulo } from "../helpers/db-validator-publicacion.js";
+import { uploadImageToCloudinary } from "../middlewares/cloudinary.js";
 
 export const savePublicacion = async (req, res) => {
   const data = req.body || {};
@@ -16,10 +17,18 @@ export const savePublicacion = async (req, res) => {
     }
 
     const fechaFinal = data.fecha ? new Date(data.fecha) : new Date();
+    let imagen;
+    if (req.file) {
+      imagen = await uploadImageToCloudinary(req.file.buffer);
+    } else if (req.body.imagen) {
+      imagen = req.body.imagen;
+    }
+    data.imagen = imagen;
 
     await validateTitulo(data.titulo);
 
     const publicacion = new publicModel({
+
       ...data,
       curso: curso._id,
       fecha: fechaFinal,
@@ -158,7 +167,7 @@ export const getPublicacionesByCurso = async (
 
 export const updatePublicacion = async (req, res) => {
   const { id } = req.params;
-  const { titulo, texto } = req.body;
+  const { titulo, texto, imagen } = req.body;
 
   try {
     const publicacion = await publicModel.findOne({ _id: id, status: true });
@@ -186,6 +195,14 @@ export const updatePublicacion = async (req, res) => {
     //Actualizar el texto si se proporciona
     if (texto) {
       publicacion.texto = texto;
+    }
+
+    //Actualizar la imagen si se proporciona
+    if (imagen) {
+      publicacion.imagen = imagen;
+    } else if (req.file) {
+      const imagenUrl = await uploadImageToCloudinary(req.file.buffer);
+      publicacion.imagen = imagenUrl;
     }
 
     await publicacion.save();
